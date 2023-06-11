@@ -1,5 +1,6 @@
 require './classes/Board'
 require './classes/Game'
+include PegColours
+
 game = Game.new
 game.guess
-game.board.print_row(game.current_move)
