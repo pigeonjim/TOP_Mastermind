@@ -7,6 +7,8 @@ class Game
   CODE_SIZE = 4
   def initialize
     @board = Board.new
-    @code = The_Code.new
+    @code = Code.new
   end
+  
+
 end

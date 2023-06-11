@@ -5,15 +5,14 @@ class Peg
   WRONGPLACE = 'white'.freeze
 
   def initialize(the_colour = 'blank')
-    @a_colour = check_colour(the_colour)
+    @a_colour = the_colour
   end
 
-  def check_colour(check_colour)
-    temp = check_colour.clone
-    until Peg::COLOURS.include?(temp)
+  def set_guess_colour(check_colour)
+    until Peg::COLOURS.include?(check_colour)
       puts 'Incorect Colour choice. Please try again'
-      temp = gets.chomp.downcase
+      check_colour = gets.chomp.downcase
     end
-    return temp
+    @a_colour = check_colour
   end
 end

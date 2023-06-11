@@ -1,5 +1,5 @@
 require './classes/Board'
 require './classes/Game'
 game = Game.new
-borad = Board.new
-puts borad.row_arry[1]
+game.code.random_code
+game.code.get_code_colours
