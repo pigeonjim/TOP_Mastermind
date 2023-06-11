@@ -1,5 +1,5 @@
 require './classes/Board'
 require './classes/Game'
 game = Game.new
-game.code.random_code
-game.code.get_code_colours
+game.guess
+game.board.print_row(game.current_move)
