@@ -1,21 +1,19 @@
 class Peg
-    attr_accessor :a_colour
+  attr_accessor :a_colour
 
-    COLOURS = ["red","blue","yellow","green","black","pink"]
-    WRONGPLACE = "White"
+  COLOURS = %w(red blue yellow green black pink blank)
+  WRONGPLACE = 'white'.freeze
 
-    def initialize(a_colour)
-       a_colour = check_colour(a_colour.downcase())
+  def initialize(the_colour = 'blank')
+    @a_colour = check_colour(the_colour)
+  end
+
+  def check_colour(check_colour)
+    temp = check_colour.clone
+    until Peg::COLOURS.include?(temp)
+      puts 'Incorect Colour choice. Please try again'
+      temp = gets.chomp.downcase
     end
-
-    def check_colour(a_colour)
-        unless COLOURS.include? a_colour
-            puts "Incorect Colour choice. Please try again"
-            a_colour2 = gets.downcase()
-            puts a_colour
-            self.check_colour(a_colour2)
-        end
-        return a_colour
-    end
-
+    return temp
+  end
 end

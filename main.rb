@@ -1,3 +1,5 @@
-require './classes/Peg.rb'
-
-a_peg = Peg.new("gree")
+require './classes/Board'
+require './classes/Game'
+game = Game.new
+borad = Board.new
+puts borad.row_arry[1]
