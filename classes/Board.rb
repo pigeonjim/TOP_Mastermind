@@ -3,8 +3,8 @@ class Board
 
   attr_accessor :row_arry
 
-  def initialize
-    @row_arry = Array.new(12) { Row.new }
+  def initialize(code_size)
+    @row_arry = Array.new(12) { Row.new(code_size) }
   end
 
   def populate_row(move_no, guess)

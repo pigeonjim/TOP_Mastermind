@@ -1,8 +1,8 @@
 class Row
   attr_accessor :guess_slots, :feeback_slots
 
-  def initialize
-    @guess_slots = Array.new(Game::CODE_SIZE) { 'W' }
-    @feeback_slots = Array.new(Game::CODE_SIZE) { 'W' }
+  def initialize(code_size)
+    @guess_slots = Array.new(code_size) { 'W' }
+    @feeback_slots = Array.new(code_size) { 'W' }
   end
 end

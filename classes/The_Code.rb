@@ -1,17 +1,19 @@
 class Code
+  require './modules'
+  include PegColours
   attr_accessor :the_code
 
-  def initialize
-    @the_code = Array.new(Game::CODE_SIZE)
+  def initialize(code_size)
+    @the_code = Array.new(code_size)
   end
 
   def random_code
-    @the_code.each { |apeg| apeg = PegColours::COLOURS[0..5].sample }
+    @the_code.each_with_index { |apeg, idx| @the_code[idx] = PegColours::COLOURINPUT[0..5].sample }
   end
 
   def get_code_colours
     colours_ary = Array.new
-    the_code.each { |apeg| colours_ary.push(apeg.a_colour) }
-    return colours_ary
+    @the_code.each { |apeg| colours_ary.push(apeg) } 
+    return colours_ary.join(' ')
   end
 end
