@@ -32,4 +32,14 @@ class Game
     colour_ary.each { |col| return false unless COLOURINPUT.include?(col) }
     return true
   end
+
+  def correct_guess?
+    puts "#{@code.the_code}\n\n"
+    correct = 0
+    @current_guess.each_with_index { |colr, idx| correct += 1 if colr == @code.the_code[idx] }
+    @board.fill_feedback(@current_move, @current_guess, @code.the_code)
+    @current_move += 1
+    (correct == @config.code_size) ? (return true) : (return false)
+  end
+
 end
