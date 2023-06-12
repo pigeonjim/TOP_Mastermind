@@ -6,12 +6,13 @@ module PegColours
 end
 
 module TextOutput
-require './classes/GameConfig.rb'
-config = GameConfig.new
-OutputGuessAsk = "Please make a guess
-using #{PegColours::COLOURS[:r]}, #{PegColours::COLOURS[:b]}, #{PegColours::COLOURS[:y]}, #{PegColours::COLOURS[:g]}, #{PegColours::COLOURS[:o]}, #{PegColours::COLOURS[:p]}\e[0m
-to input a #{config.code_size} digit code"
-OutputError = "\e[1;31m\nIncorrect entry. Please try again\n\e[0m"
-OutputWinner = "Well done you win"
-OutputLoser = "Oh dear you lost"
+    require './classes/GameConfig.rb'
+    config = GameConfig.new
+    OutputGuessAsk = "Please make a guess"
+    OutputCodeAsk = "Please input a code"
+    OutputTheColourGuide = "using #{PegColours::COLOURS[:r]}, #{PegColours::COLOURS[:b]}, #{PegColours::COLOURS[:y]}, #{PegColours::COLOURS[:g]}, #{PegColours::COLOURS[:o]}, #{PegColours::COLOURS[:p]}\e[0m
+    to input a #{config.code_size} digit code"
+    OutputError = "\e[1;31m\nIncorrect entry. Please try again\n\e[0m"
+    OutputWinner = "Well done you win"
+    OutputLoser = "Oh dear you lost"
 end
