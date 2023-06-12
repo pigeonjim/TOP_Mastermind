@@ -14,6 +14,7 @@ if config.player.include?("code")
     game_over ? (puts "#{TextOutput::OutputLoser}") : (puts "#{TextOutput::OutputWinner}")
 else
     the_game.code.random_code
+    the_game.current_move = 0
     until the_game.current_move == config.no_moves || game_over
         the_game.guess
         game_over = the_game.correct_guess?
